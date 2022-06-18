@@ -81,14 +81,14 @@ Promise.all([getMap, getRevenue]).then(
       .style("fill", d => d?.properties?.rank ? colorScale(d.properties.rank) : "#d6d6d6")
       .style("stroke", "#3f2ab2")
       .on("mouseover", function (e) {
-        d3.select(this).style("stroke", "white");
+        d3.select(this).style("stroke", "#f3dc71");
         d3.select(this).select(function (d) {
           d3.select(".city").html(() => d.properties.revenue ? `${d.properties.COUNTYNAME} , ${d.properties.revenue}` : `${d.properties.COUNTYNAME}`);
           // d3.style("display", "block");
         });
       })
       .on("mouseleave", function (e) {
-        d3.select(this).style("stroke", "none");
+        d3.select(this).style("stroke", "#3f2ab2");
         // d3.style("display", "none");
       });
   }
